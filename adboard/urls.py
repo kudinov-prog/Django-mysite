@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import adboard_list, index
+from .views import index, AdbCreateView
 
 urlpatterns = [
-    path('adboard/', adboard_list),
-    path('main', index),
+    path('', index, name='index'),
+    path('add/', AdbCreateView.as_view(), name='add'),
 ]

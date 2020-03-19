@@ -1,0 +1,32 @@
+header h1 {
+    font-size: 30pt;
+    font: italic;
+    text-align: center;
+    background-color: aquamarine;
+    margin-bottom: 10px;
+}
+nav {
+    font-size: 16pt;
+    width: 150px;
+    float: left;
+    background-color: rgb(123, 248, 238);
+}
+nav a {
+    display: block;
+    margin: 10px 0px;
+}
+section {
+    margin-left: 170px;
+    margin-right: 600px;
+}
+
+.b {
+    background-color: rgb(198, 221, 223);
+}
+.date {
+    font-size: 13px;
+}
+
+.ad {
+    font-size: 15px;
+}

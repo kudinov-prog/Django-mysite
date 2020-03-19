@@ -1,14 +1,23 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from .forms import Adbform
 
 from .models import Adb
-
-def adboard_list(request):
-    s = 'Список заметок\r\n\r\n'
-    for ad in Adb.objects.order_by('-published'):
-        s += ad.title + '\r\n' + ad.content + '\r\n' + str(ad.published) + '\r\n\r\n'
-    return HttpResponse(s, content_type='text/plain; charset=utf-8')
+from .models import Tag
 
 def index(request):
-    http = '<h1>Главная</h1>'
-    return HttpResponse(http)
+    adb = Adb.objects.all()
+    context = {'adb': adb}
+    return render(request, 'adboard/index.html', context)
+
+class AdbCreateView(CreateView):
+    template_name = 'adboard/add.html'
+    form_class = Adbform
+    success_url = reverse_lazy('index')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tags'] = Tag.objects.all()
+        return context
+
