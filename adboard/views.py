@@ -21,3 +21,6 @@ class AdbCreateView(CreateView):
         context['tags'] = Tag.objects.all()
         return context
 
+def account(request):
+    pass
+

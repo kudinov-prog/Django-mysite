@@ -18,6 +18,9 @@
             <a href="{% url 'index' %}">Главная</a>
             <a href="{% url 'add' %}">Добавить</a>
         </nav>
+        <nav class="left">
+            <a href="{% url 'account' %}">Аккаунт</a>
+        </nav>
         <section>
         {% block content %}
         {% endblock %}
