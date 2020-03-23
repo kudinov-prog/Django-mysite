@@ -1,10 +1,11 @@
 header h1 {
+    font: 1em sans-serif;
     font-size: 20pt;
-    font: normal;
-    text-align: center;
-    background-color: rgb(129, 129, 129);
+    color: white;
+    text-align: left;
+    background-color: #004358;
     margin-bottom: 10px;
-    border-radius: 10px;
+    padding: 15px;
 }
 
 
@@ -30,6 +31,7 @@ section {
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 5px;
+    box-shadow: 3px 3px 4px rgba(54, 54, 54, 0.4);
     
 }
 .date {
